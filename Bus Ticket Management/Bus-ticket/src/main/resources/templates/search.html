@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Buses</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Search Bus Routes</h2>
+    <form th:action="@{/search}" method="get">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" name="from" class="form-control" placeholder="From" required />
+            </div>
+            <div class="col">
+                <input type="text" name="to" class="form-control" placeholder="To" required />
+            </div>
+            <div class="col">
+                <input type="date" name="date" class="form-control" required />
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

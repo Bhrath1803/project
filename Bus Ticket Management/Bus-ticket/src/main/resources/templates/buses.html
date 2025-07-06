@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Available Buses</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h2>Available Buses</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Route</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="bus : ${buses}">
+      <td th:text="${bus.fromLocation} + ' → ' + ${bus.toLocation}"></td>
+      <td th:text="${bus.departureTime}"></td>
+      <td th:text="${bus.arrivalTime}"></td>
+      <td th:text="${bus.price} + ' ₹'"></td>
+      <td>
+        <a th:href="@{/book(busId=${bus.id})}" class="btn btn-success">Book</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
