@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Medication Management</title>
+</head>
+<body>
+<h2>Medication Form</h2>
+<form th:action="@{/medication}" th:object="${medication}" method="post">
+    <input type="text" th:field="*{patientName}" placeholder="Patient Name" required /><br/>
+    <input type="text" th:field="*{medicineName}" placeholder="Medicine Name" required /><br/>
+    <input type="text" th:field="*{dosage}" placeholder="Dosage" required /><br/>
+    <button type="submit">Save</button>
+</form>
+<p th:if="${param.success}">Medication record saved!</p>
+</body>
+</html>
